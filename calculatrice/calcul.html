@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calcul.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="fondcal">
+        <div id="part1" > 
+            <div id="recblanc" colspan="4"> <p id="resultat" ></p> </div>
+            <button id="buttoncarréR"  onclick="touche('reset')"> C </button>
+        </div>
+        <div class="part2">
+           <button class="button" onclick="touche(1)">1</button>
+           <button class="button" onclick="touche(2)">2</button>
+           <button class="button" onclick="touche(3)">3</button>
+           <button class="buttoncarré" onclick="touche('/')">/</button>
+        </div>
+        <div class="part2">
+           <button class="button" onclick="touche(4)">4</button>
+           <button class="button" onclick="touche(5)">5</button>
+           <button class="button" onclick="touche(6)">6</button>
+           <button class="buttoncarré"  onclick="touche('-')">-</button>
+        </div>
+        <div class="part2">
+           <button class="button" onclick="touche(7)">7</button>
+           <button class="button" onclick="touche(8)">8</button>
+           <button class="button" onclick="touche(9)">9</button>
+           <button class="buttoncarré" onclick="touche('+')">+</button>
+        </div>
+        <div class="part2">
+           <button class="button" onclick="touche('.')">.</button>
+           <button class="button" onclick="touche(0)">0</button>
+           <button id="buttonR" onclick="touche('=')">=</button>
+           <button class="buttoncarré" onclick="touche('*')">*</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+function touche(nombre) {
+    if (nombre == '='){
+        var affiche = document.getElementById('resultat').innerHTML;
+        var resultat = eval(affiche);
+        document.getElementById('resultat').innerHTML = resultat;
+    return;
+    }
+    else if (nombre =='reset'){
+        document.getElementById('resultat').innerHTML='';
+    return;
+    }
+    else{
+        var affiche = document.getElementById('resultat').innerHTML;
+        var nombres = affiche+nombre ;
+        document.getElementById('resultat').innerHTML=nombres;
+    return;
+    }
+}
+
+</script>
